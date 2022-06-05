@@ -7,7 +7,6 @@ import com.cjy.service.LoginService;
 import com.cjy.utils.SHAUtil;
 import com.cjy.utils.SendEmailUtil;
 import com.cjy.utils.TokenUtil;
-import io.jsonwebtoken.Claims;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,8 +30,8 @@ public class LoginController {
     @RequestMapping("/activation")
     public String activation(String jwt, Model model) {
         try {
-            Claims claims = TokenUtil.parseJwt(jwt);
-            Emp emp = this.empService.findEmpByUsername(claims.getId());
+            String username = TokenUtil.parseJwt(jwt);
+            Emp emp = this.empService.findEmpByUsername(username);
             this.loginService.updateActivation(emp.getUsername());
             model.addAttribute("msg", "账号激活成功");
             return "login";
@@ -68,8 +67,8 @@ public class LoginController {
     @RequestMapping("/resetPassword")
     public String reset(String jwt, Model model) {
         try {
-            Claims claims = TokenUtil.parseJwt(jwt);
-            model.addAttribute("username", claims.getId());
+            String username = TokenUtil.parseJwt(jwt);
+            model.addAttribute("username", username);
             return "resetPassword";
         } catch (Exception e) {
             System.out.println(e);

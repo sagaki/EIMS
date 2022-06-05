@@ -1,6 +1,5 @@
 package com.cjy.utils;
 
-import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -24,8 +23,8 @@ public class TokenUtil {
         return userToken;
     }
 
-    public static Claims parseJwt(String token) {
-        return Jwts.parser().setSigningKey(TOKEN_SECRET).parseClaimsJws(token).getBody();
+    public static String parseJwt(String token) {
+        return Jwts.parser().setSigningKey(TOKEN_SECRET).parseClaimsJws(token).getBody().getId();
     }
 
 }
