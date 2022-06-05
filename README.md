@@ -14,7 +14,8 @@ OS.版本: 12.4<br>
 架构: aarch64<br>
 Java虚拟机版本:1.8.0_333-b02<br>
 Server.服务器版本: Apache Tomcat/9.0.63<br>
-IDE: IntelliJ IDEA 2022.1.1
+IDE: IntelliJ IDEA 2022.1.1<br>
+数据库: 5.6.51 MySQL
 ### 项目功能点
 1.员工信息的增删改查<br>
 2.可适用邮箱进行账号密码的重置<br>
