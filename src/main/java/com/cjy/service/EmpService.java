@@ -13,7 +13,7 @@ public interface EmpService {
     List<Emp> allEmp(Integer page);
 
     // 查询总页数
-    Integer CountEmp();
+    Integer countEmp();
 
     // 删除员工信息
     void deleteEmp(Integer id);

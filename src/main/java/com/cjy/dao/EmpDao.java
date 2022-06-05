@@ -22,7 +22,7 @@ public interface EmpDao {
 
     // 查询总页数
     @Select("select COUNT(*) from emp,login where id=eid and activation='是'")
-    Integer CountEmp();
+    Integer countEmp();
 
     // 根据员工编号查询信息
     @Select("select * from emp,login where id=eid and id=#{id} and activation='是'")

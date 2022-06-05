@@ -46,7 +46,7 @@ public class EmpController {
             tmp = 1;
         }
         List<Emp> emps = this.empService.allEmp(page);
-        Integer pages = this.empService.CountEmp();
+        Integer pages = this.empService.countEmp();
         if (pages % 5 != 0) {
             pages = pages / 5 + 1;
         } else {

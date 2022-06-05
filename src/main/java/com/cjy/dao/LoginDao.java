@@ -9,7 +9,7 @@ import org.apache.ibatis.annotations.Update;
 public interface LoginDao {
 
     // 添加员工登录信息
-    @Insert("insert into login(username,password,purview,activation) values(#{username},#{password},#{purview},#{activation})")
+    @Insert("insert into login(username,password,purview,activation,eid) values(#{username},#{password},#{purview},#{activation},#{eid})")
     Integer addLogin(Emp emp);
 
     // 通过修改字段值实现假删除 假删除员工信息

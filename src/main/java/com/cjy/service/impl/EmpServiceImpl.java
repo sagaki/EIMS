@@ -24,9 +24,10 @@ public class EmpServiceImpl implements EmpService {
 
     // 添加员工信息
     @Override
-    public void addEmp(Emp empinfo) {
-        this.empDao.addEmp(empinfo);
-        this.loginDao.addLogin(empinfo);
+    public void addEmp(Emp emp) {
+        this.empDao.addEmp(emp);
+        emp.setEid(this.empDao.countEmp());
+        this.loginDao.addLogin(emp);
     }
 
     // 分页查询全部员工信息
@@ -37,8 +38,8 @@ public class EmpServiceImpl implements EmpService {
 
     // 查询总页数
     @Override
-    public Integer CountEmp() {
-        return this.empDao.CountEmp();
+    public Integer countEmp() {
+        return this.empDao.countEmp();
     }
 
     // 删除员工信息
@@ -67,9 +68,9 @@ public class EmpServiceImpl implements EmpService {
 
     // 更新员工信息
     @Override
-    public void updateEmp(Emp empinfo) {
-        this.empDao.updateEmp(empinfo);
-        this.loginDao.updateLogin(empinfo);
+    public void updateEmp(Emp emp) {
+        this.empDao.updateEmp(emp);
+        this.loginDao.updateLogin(emp);
     }
 
 }
