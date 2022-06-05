@@ -1,0 +1,68 @@
+package com.cjy.service.impl;
+
+import com.cjy.dao.EmpDao;
+import com.cjy.dao.LoginDao;
+import com.cjy.domain.Emp;
+import com.cjy.service.EmpService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+
+@Service
+@Transactional
+public class EmpServiceImpl implements EmpService {
+
+    // 注解注入EmpDao
+    @Autowired
+    private EmpDao empDao;
+
+    // 注解注入LoginDao
+    @Autowired
+    private LoginDao loginDao;
+
+    @Override
+    public void addEmp(Emp empinfo) {
+        this.empDao.addEmp(empinfo);
+        this.loginDao.addLogin(empinfo);
+    }
+
+    // 分页查询全部员工信息
+    @Override
+    public List<Emp> allEmp(Integer paeg) {
+        return this.empDao.allEmp(paeg);
+    }
+
+    @Override
+    public Integer CountEmp() {
+        return this.empDao.CountEmp();
+    }
+
+    @Override
+    public void deleteEmp(Integer id) {
+        this.loginDao.deleteLogin(id);
+    }
+
+    @Override
+    public Emp findEmpById(Integer id) {
+        return this.empDao.findEmpById(id);
+    }
+
+    @Override
+    public List<Emp> findEmpByName(String name) {
+        return this.empDao.findEmpByName(name);
+    }
+
+    @Override
+    public Emp findEmpByUsername(String username) {
+        return this.empDao.findEmpByUsername(username);
+    }
+
+    @Override
+    public void updateEmp(Emp empinfo) {
+        this.empDao.updateEmp(empinfo);
+        this.loginDao.updateLogin(empinfo);
+    }
+
+}
