@@ -13,6 +13,7 @@ public class Emp {
     private String phone;       // 员工手机号
     private String purview;     // 员工权限
     private String username;    // 登录用户名
+    private Integer eid;
 
     public Integer getEid() {
         return eid;
@@ -21,8 +22,6 @@ public class Emp {
     public void setEid(Integer eid) {
         this.eid = eid;
     }
-
-    private Integer eid;
 
     public String getActivation() {
         return activation;
