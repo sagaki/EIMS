@@ -24,6 +24,10 @@ public interface EmpDao {
     @Select("select COUNT(*) from emp,login where id=eid and activation='是'")
     Integer countEmp();
 
+    // 返回emp.id
+    @Select("select COUNT(*) from emp")
+    Integer count();
+
     // 根据员工编号查询信息
     @Select("select * from emp,login where id=eid and id=#{id} and activation='是'")
     Emp findEmpById(Integer id);

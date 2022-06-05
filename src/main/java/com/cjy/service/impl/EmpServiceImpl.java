@@ -26,7 +26,7 @@ public class EmpServiceImpl implements EmpService {
     @Override
     public void addEmp(Emp emp) {
         this.empDao.addEmp(emp);
-        emp.setEid(this.empDao.countEmp());
+        emp.setEid(this.empDao.count());
         this.loginDao.addLogin(emp);
     }
 
