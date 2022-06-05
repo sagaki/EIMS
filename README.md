@@ -31,3 +31,17 @@ v1.0.0
 ### 角色账号密码
 用户名：admin 密码：123456
 ### 项目部署
+建议使用Tomcat9，如果使用其他版本的Tomcat有大概率会出现启动失败
+![图](images/imags1.png)
+![图](images/imags2.png)
+![图](images/imags3.png)
+![图](images/imags4.png)
+![图](images/imags5.png)
+![图](images/imags6.png)
+![图](images/imags7.png)
+![图](images/imags8.png)
+![图](images/imags9.png)
+![图](images/imags10.png)
+![图](images/imags11.png)
+![图](images/imags12.png)
+![图](images/imags13.png)
