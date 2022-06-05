@@ -8,7 +8,7 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import java.util.Date;
 
 /**
-    生成Token 解析Token
+ * 生成Token 解析Token
  */
 public class TokenUtil {
     // 设置过期时间

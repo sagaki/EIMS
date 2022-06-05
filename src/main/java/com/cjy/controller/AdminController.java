@@ -9,8 +9,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
+
 /**
-    管理员路由控制器
+ * 管理员路由控制器
  */
 @Controller
 @RequestMapping("/main/admin")
@@ -46,7 +47,6 @@ public class AdminController {
     // 根据条件查询员工信息
     @RequestMapping("/empInfo")
     public String empInfo(String username, Integer id, Model model) {
-        System.out.println(id);
         if (username.isEmpty() && id != null) {
             Emp emp = this.empService.findEmpById(id);  // 根据员工编号查询信息
             model.addAttribute("emp", emp);
@@ -76,9 +76,13 @@ public class AdminController {
         }
         List<Emp> emps = this.empService.allEmp(page);
         Integer pages = this.empService.CountEmp();
-        pages = (int) Math.ceil(pages);
+        if (pages % 5 != 0) {
+            pages = pages / 5 + 1;
+        } else {
+            pages = pages / 5;
+        }
         model.addAttribute("emps", emps);
-        model.addAttribute("pages", pages + 1);
+        model.addAttribute("pages", pages);
         model.addAttribute("page", tmp);
         return "allAdmin";
     }

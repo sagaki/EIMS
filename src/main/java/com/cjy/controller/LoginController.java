@@ -14,8 +14,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
+
 /**
-    未登录路由控制器
+ * 未登录路由控制器
  */
 @Controller
 public class LoginController {
@@ -142,9 +143,9 @@ public class LoginController {
         emp.setPassword(password);
         model.addAttribute("emp", emp);
         String jwt = TokenUtil.createJwt(emp.getUsername());
-        String url = "http://localhost:8080/ssm/activation?jwt=";
+        String url = "http://localhost:8080/activation?jwt=";
         String title = "激活账号";
-        String content = "请点击链接激活账号" + url + jwt;
+        String content = emp.getUsername() + "请点击链接激活账号" + url + jwt;
         try {
             SendEmailUtil.send(emp.getEmail(), title, content);
         } catch (Exception e) {
@@ -169,9 +170,9 @@ public class LoginController {
         try {
             Emp emp = this.empService.findEmpByUsername(username);
             String jwt = TokenUtil.createJwt(emp.getUsername());
-            String url = "http://localhost:8080/ssm/resetPassword?jwt=";
+            String url = "http://localhost:8080/resetPassword?jwt=";
             String title = "重置密码";
-            String content = "请点击链接来重置你的账号密码" + url + jwt;
+            String content = emp.getUsername() + "请点击链接来重置你的账号密码" + url + jwt;
             SendEmailUtil.send(emp.getEmail(), title, content);
             model.addAttribute("msg", "请查看邮箱点击链接进行密码重置");
             return "reset";

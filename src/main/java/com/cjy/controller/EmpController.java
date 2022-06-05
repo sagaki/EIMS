@@ -8,8 +8,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
+
 /**
-    普通用户路由控制器
+ * 普通用户路由控制器
  */
 @Controller
 @RequestMapping("/main/emp")
@@ -46,9 +47,13 @@ public class EmpController {
         }
         List<Emp> emps = this.empService.allEmp(page);
         Integer pages = this.empService.CountEmp();
-        pages = (int) Math.ceil(pages);
+        if (pages % 5 != 0) {
+            pages = pages / 5 + 1;
+        } else {
+            pages = pages / 5;
+        }
         model.addAttribute("emps", emps);
-        model.addAttribute("pages", pages + 1);
+        model.addAttribute("pages", pages);
         model.addAttribute("page", tmp);
         return "allEmp";
     }

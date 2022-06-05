@@ -4,8 +4,9 @@ import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.util.Properties;
+
 /**
-    邮件发送
+ * 邮件发送
  */
 public class SendEmailUtil {
 
