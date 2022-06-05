@@ -14,7 +14,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
-
+/**
+    未登录路由控制器
+ */
 @Controller
 public class LoginController {
 
@@ -24,6 +26,7 @@ public class LoginController {
     @Autowired
     private LoginService loginService;
 
+    //  激活员工账号
     @RequestMapping("/activation")
     public String activation(String jwt, Model model) {
         try {
@@ -39,11 +42,13 @@ public class LoginController {
         }
     }
 
+    // 返回首页
     @RequestMapping("/index")
     public String index() {
         return "index";
     }
 
+    // 返回登录页面
     @RequestMapping("/toLogin")
     public String login(Integer error, Model model) {
         if (error != null) {
@@ -52,11 +57,13 @@ public class LoginController {
         return "login";
     }
 
+    // 返回注册页面
     @RequestMapping("/toRegister")
     public String register() {
         return "register";
     }
 
+    // 返回员工登录密码修改页面
     @RequestMapping("/resetPassword")
     public String reset(String jwt, Model model) {
         try {
@@ -70,6 +77,7 @@ public class LoginController {
         }
     }
 
+    // 员工登录密码修改
     @RequestMapping("/setPassword")
     public String setPassword(Login login, Model model) {
         String password = login.getPassword();
@@ -81,11 +89,13 @@ public class LoginController {
         return "login";
     }
 
+    // 返回首页
     @RequestMapping("/")
     public String toIndex() {
         return "index";
     }
 
+    // 登录校验
     @RequestMapping("/login")
     public String toLogin(Login login, HttpSession session, Model model) {
 
@@ -108,11 +118,13 @@ public class LoginController {
         }
     }
 
+    // 返回个人主页
     @RequestMapping("/main")
     public String toMian() {
         return "main";
     }
 
+    // 注册信息校验 添加 成功后发送激活邮件
     @RequestMapping("/register")
     public String toRegister(Emp emp, Model model) {
         String password = emp.getPassword();
@@ -145,11 +157,13 @@ public class LoginController {
         return "login";
     }
 
+    // 返回员工密码重置页
     @RequestMapping("/reset")
     public String toReset() {
         return "reset";
     }
 
+    // 校验员工密码重置需要的登录用户名 正确发送重置用邮件
     @RequestMapping("/toReset")
     public String toReset(String username, Model model) {
         try {
@@ -167,6 +181,7 @@ public class LoginController {
         }
     }
 
+    // 员工退出
     @RequestMapping("/logout")
     public String userlogout(HttpSession session) {
         session.invalidate();

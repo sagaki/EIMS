@@ -9,7 +9,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
-
+/**
+    管理员路由控制器
+ */
 @Controller
 @RequestMapping("/main/admin")
 public class AdminController {

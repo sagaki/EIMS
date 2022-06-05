@@ -12,6 +12,7 @@ public interface EmpService {
     // 分页查询全部员工信息
     List<Emp> allEmp(Integer page);
 
+    // 查询总页数
     Integer CountEmp();
 
     // 删除员工信息
@@ -23,6 +24,7 @@ public interface EmpService {
     // 根据员工姓名模糊查询员工信息
     List<Emp> findEmpByName(String name);
 
+    // 根据员工登录用户名查询员工信息
     Emp findEmpByUsername(String username);
 
     // 更新员工信息

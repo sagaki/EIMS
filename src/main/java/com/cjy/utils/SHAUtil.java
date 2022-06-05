@@ -3,6 +3,9 @@ package com.cjy.utils;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+/**
+    密码加密
+ */
 public class SHAUtil {
 
     /**

@@ -35,6 +35,7 @@ public class EmpServiceImpl implements EmpService {
         return this.empDao.allEmp(paeg);
     }
 
+    // 查询总页数
     @Override
     public Integer CountEmp() {
         return this.empDao.CountEmp();
@@ -58,6 +59,7 @@ public class EmpServiceImpl implements EmpService {
         return this.empDao.findEmpByName(name);
     }
 
+    // 根据员工登录用户名查询员工信息
     @Override
     public Emp findEmpByUsername(String username) {
         return this.empDao.findEmpByUsername(username);

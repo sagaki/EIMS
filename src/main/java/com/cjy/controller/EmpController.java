@@ -8,7 +8,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
-
+/**
+    普通用户路由控制器
+ */
 @Controller
 @RequestMapping("/main/emp")
 public class EmpController {
@@ -16,6 +18,7 @@ public class EmpController {
     @Autowired
     private EmpService empService;
 
+    // 根据条件查询员工信息
     @RequestMapping("/empInfo")
     public String empInfo(String username, Model model) {
         if (username.isEmpty()) {
@@ -28,6 +31,7 @@ public class EmpController {
         }
     }
 
+    // 分页查询全部员工信息
     @RequestMapping("/allEmp")
     public String showEmp(Integer page, Model model, Integer error) {
         if (error != null) {

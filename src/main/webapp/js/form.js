@@ -43,6 +43,7 @@ function checkAddEmp() {
 	return bUsername && bPhone && bName && bPassword && bPurview && bEmail;
 }
 
+// 校验更新表单
 function checkUpdateEmp() {
 	var bUsername = checkUsername();
 	var bPhone = checkPhone();
@@ -52,12 +53,14 @@ function checkUpdateEmp() {
 	return bUsername && bPhone && bName && bPurview && bEmail;
 }
 
+// 校验登录表单
 function checkLogin() {
 	var bUsername = checkLoginUsername();
 	var bPassword = checkLoginPassword();
 	return bUsername && bPassword;
 }
 
+// 校验注册表单
 function checkRegister() {
 	var bUsername = checkUsername();
 	var bPhone = checkPhone();
@@ -82,6 +85,7 @@ function checkUsername() {
 	return msg == "";
 }
 
+// 验证员工手机号
 function checkPhone() {
 	var regex = /^1[3456789]\d{9}$/;
 	var value = phoneObj.value;
@@ -95,6 +99,7 @@ function checkPhone() {
 	return msg == "";
 }
 
+// 验证员工姓名
 function checkName() {
 	var regex = /^[\u4e00-\u9fa5]{1,10}$/;
 	var value = nameObj.value;
@@ -108,6 +113,7 @@ function checkName() {
 	return msg == "";
 }
 
+// 验证员工权限
 function checkPurview() {
 	var value = purviewObj.value;
 	var msg = "";
@@ -125,6 +131,7 @@ function checkPurview() {
 	return msg == "";
 }
 
+// 验证重复密码
 function checkConfirm() {
 	var passwordValue = passwordObj.value;
 	var confirmValue = confirmObj.value;
@@ -139,6 +146,7 @@ function checkConfirm() {
 	return msg == "";
 }
 
+// 验证密码
 function checkPassword() {
 	var regex = /^.{6,20}$/;
 	var value = passwordObj.value;
@@ -153,6 +161,7 @@ function checkPassword() {
 	return msg == "";
 }
 
+// 验证登录用户名是否空
 function checkLoginUsername() {
 	var value = usernameObj.value;
 	var msg = "";
@@ -164,6 +173,7 @@ function checkLoginUsername() {
 	return msg == "";
 }
 
+// 验证密码是否空
 function checkLoginPassword() {
 	var value = passwordObj.value;
 	var msg = "";
@@ -175,6 +185,7 @@ function checkLoginPassword() {
 	return msg == "";
 }
 
+// 验证员工邮箱
 function checkEmail() {
 	var regex = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
 	var value = emailObj.value;

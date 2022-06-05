@@ -20,6 +20,7 @@ public interface EmpDao {
     @Select("select * from emp,login where id=eid and activation='是' LIMIT #{page},5")
 	List<Emp> allEmp(Integer page);
 
+    // 查询总页数
     @Select("select COUNT(*)/5 from emp,login where id=eid and activation='是'")
 	Integer CountEmp();
 
@@ -31,6 +32,7 @@ public interface EmpDao {
     @Select("select * from emp,login where id=eid and name like concat('%',#{value},'%') and activation='是'")
 	List<Emp> findEmpByName(String name);
 
+    // 根据员工登录用户名查询员工信息
     @Select("select * from emp,login where id=eid and username=#{username}")
 	Emp findEmpByUsername(String username);
 

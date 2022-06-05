@@ -20,6 +20,7 @@ public class EmpInterceptor implements HandlerInterceptor {
             throws Exception {
     }
 
+    // 拦截非普通员工访问
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object arg2) throws Exception {
         HttpSession session = request.getSession();

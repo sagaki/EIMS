@@ -7,6 +7,9 @@ import io.jsonwebtoken.SignatureAlgorithm;
 
 import java.util.Date;
 
+/**
+    生成Token 解析Token
+ */
 public class TokenUtil {
     // 设置过期时间
     private static final long EXPIRE_DATE = 10 * 60 * 1000;

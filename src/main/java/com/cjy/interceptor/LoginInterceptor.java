@@ -19,6 +19,7 @@ public class LoginInterceptor implements HandlerInterceptor {
                            ModelAndView modelAndView) throws Exception {
     }
 
+    // 拦截未登录访问
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
             throws Exception {
