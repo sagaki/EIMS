@@ -17,6 +17,7 @@ public class AdminController {
     @Autowired
     private EmpService empService;
 
+    // 跳转到员工信息页面
     @RequestMapping("/addEmp")
     public String addEmp(Emp emp, Model model) {
         String password = emp.getPassword();
@@ -33,23 +34,25 @@ public class AdminController {
         return "redirect:/main/admin/allEmp";
     }
 
+    // 删除员工信息
     @RequestMapping("/deleteEmp")
     public String deleteEmp(Integer id) {
         this.empService.deleteEmp(id);
         return "redirect:/main/admin/allEmp";
     }
 
+    // 根据条件查询员工信息
     @RequestMapping("/empInfo")
     public String empInfo(String username, Integer id, Model model) {
         System.out.println(id);
         if (username.isEmpty() && id != null) {
-            Emp emp = this.empService.findEmpById(id);
+            Emp emp = this.empService.findEmpById(id);  // 根据员工编号查询信息
             model.addAttribute("emp", emp);
             return "oneEmp";
         } else if (username.isEmpty() && id == null) {
             return "redirect:/main/admin/allEmp";
         } else {
-            List<Emp> emps = this.empService.findEmpByName(username);
+            List<Emp> emps = this.empService.findEmpByName(username);   // 根据员工姓名模糊查询员工信息
             model.addAttribute("emps", emps);
             model.addAttribute("empName", username);
             return "AdminInfo";
@@ -78,11 +81,13 @@ public class AdminController {
         return "allAdmin";
     }
 
+    // 添加员工信息
     @RequestMapping("/toAddEmp")
     public String toAddEmp() {
         return "addEmp";
     }
 
+    // 更新员工信息
     @RequestMapping("/toUpdateEmp")
     public String toUpdateEmp(Integer id, Model model) {
         Emp emp = this.empService.findEmpById(id);
@@ -90,6 +95,7 @@ public class AdminController {
         return "updateEmp";
     }
 
+    // 跳转到员工信息页面
     @RequestMapping("/updateEmp")
     public String updateEmp(Emp emp, Model model) {
         try {

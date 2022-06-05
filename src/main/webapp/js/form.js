@@ -1,3 +1,4 @@
+// 声明变量
 var usernameObj;
 var usernameMsg;
 var phoneObj;
@@ -12,6 +13,8 @@ var confirmObj;
 var confirmMsg;
 var emailObj;
 var emailMsg;
+
+// 页面加载之后 获取页面中的对象
 window.onload = function () {
 	usernameObj = document.getElementById("username");
 	usernameMsg = document.getElementById("usernameMsg");
@@ -28,6 +31,8 @@ window.onload = function () {
 	emailObj = document.getElementById("email");
 	emailMsg = document.getElementById("emailMsg");
 }
+
+// 校验添加表单
 function checkAddEmp() {
 	var bUsername = checkUsername();
 	var bPhone = checkPhone();
@@ -63,6 +68,7 @@ function checkRegister() {
 	return bUsername && bPhone && bEname && bPassword && bConfirm && bEmail;
 }
 
+// 验证员工登陆用户名
 function checkUsername() {
 	var regex = /^[a-zA-Z_]\w{0,9}$/;
 	var value = usernameObj.value;

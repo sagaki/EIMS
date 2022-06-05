@@ -5,10 +5,10 @@ package com.cjy.domain;
  */
 public class Login {
 
-    private String activation;    // 是否删除标识
+    private String activation;  // 是否删除标识
     private Integer eid;        // 主键ID
     private String password;    // 登录用密码
-    private String purview;        // 员工权限
+    private String purview;     // 员工权限
     private String username;    // 登录用户名
 
     public String getActivation() {

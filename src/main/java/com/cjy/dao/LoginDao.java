@@ -11,6 +11,7 @@ public interface LoginDao {
     @Insert("insert into login(username,password,purview,activation) values(#{username},#{password},#{purview},#{activation})")
     Integer addLogin(Emp emp);
 
+    // 通过修改字段值实现假删除 假删除员工信息
     @Update("update login set activation='否' where eid=#{id}")
     Integer deleteLogin(Integer id);
 

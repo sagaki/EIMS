@@ -22,6 +22,7 @@ public class EmpServiceImpl implements EmpService {
     @Autowired
     private LoginDao loginDao;
 
+    // 添加员工信息
     @Override
     public void addEmp(Emp empinfo) {
         this.empDao.addEmp(empinfo);
@@ -39,16 +40,19 @@ public class EmpServiceImpl implements EmpService {
         return this.empDao.CountEmp();
     }
 
+    // 删除员工信息
     @Override
     public void deleteEmp(Integer id) {
         this.loginDao.deleteLogin(id);
     }
 
+    // 根据员工编号查询信息
     @Override
     public Emp findEmpById(Integer id) {
         return this.empDao.findEmpById(id);
     }
 
+    // 根据员工姓名模糊查询员工信息
     @Override
     public List<Emp> findEmpByName(String name) {
         return this.empDao.findEmpByName(name);
@@ -59,6 +63,7 @@ public class EmpServiceImpl implements EmpService {
         return this.empDao.findEmpByUsername(username);
     }
 
+    // 更新员工信息
     @Override
     public void updateEmp(Emp empinfo) {
         this.empDao.updateEmp(empinfo);

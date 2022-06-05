@@ -5,13 +5,13 @@ package com.cjy.domain;
  */
 public class Emp {
 
-    private String activation;    // 是否删除标识
-    private String email;        // 员工邮箱
-    private Integer id;            // 主键ID
+    private String activation;  // 是否删除标识
+    private String email;       // 员工邮箱
+    private Integer id;         // 主键ID
     private String name;        // 员工姓名
     private String password;    // 登录用密码
-    private String phone;        // 员工手机号
-    private String purview;        // 员工权限
+    private String phone;       // 员工手机号
+    private String purview;     // 员工权限
     private String username;    // 登录用户名
 
     public String getActivation() {
