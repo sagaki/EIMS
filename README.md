@@ -1,5 +1,4 @@
 # Employee Information Management System
-Small case of pure back-end data interaction based on ssm
 ### 项目名称
 员工信息管理系统
 ### 项目完成参与人
@@ -32,6 +31,7 @@ v1.0.0
 ### 角色账号密码
 用户名：admin 密码：123456
 ### 项目部署
+com.utils.SendEmailUtil 15行 28行绑定了邮件发信人，修改参考[runoob](https://www.runoob.com/java/java-sending-email.html)<br>
 建议使用Tomcat9，如果使用其他版本的Tomcat有大概率会出现启动失败
 ![图](images/imags1.png)
 ![图](images/imags2.png)
