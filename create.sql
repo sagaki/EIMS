@@ -1,10 +1,10 @@
-CREATE TABLE emp (
+CREATE TABLE mybatis.emp (
 id int(32) PRIMARY KEY AUTO_INCREMENT, 
 name varchar(10),
 phone varchar(11),
 email varchar(30)
 );
-CREATE TABLE login (
+CREATE TABLE mybatis.login (
 nid int(32) PRIMARY KEY AUTO_INCREMENT,
 username varchar(10) UNIQUE,
 password varchar(64),
