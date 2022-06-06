@@ -1,4 +1,4 @@
-package com.cjy.utils;
+package com.utils;
 
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;

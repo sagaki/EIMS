@@ -1,4 +1,4 @@
-package com.cjy.domain;
+package com.domain;
 
 /**
  * 员工信息持久化类

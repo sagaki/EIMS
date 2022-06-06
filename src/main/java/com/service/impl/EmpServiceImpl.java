@@ -1,9 +1,9 @@
-package com.cjy.service.impl;
+package com.service.impl;
 
-import com.cjy.dao.EmpDao;
-import com.cjy.dao.LoginDao;
-import com.cjy.domain.Emp;
-import com.cjy.service.EmpService;
+import com.dao.EmpDao;
+import com.dao.LoginDao;
+import com.domain.Emp;
+import com.service.EmpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

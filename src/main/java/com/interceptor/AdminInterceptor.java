@@ -1,6 +1,6 @@
-package com.cjy.interceptor;
+package com.interceptor;
 
-import com.cjy.domain.Login;
+import com.domain.Login;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 

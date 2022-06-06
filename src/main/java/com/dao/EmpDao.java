@@ -1,6 +1,6 @@
-package com.cjy.dao;
+package com.dao;
 
-import com.cjy.domain.Emp;
+import com.domain.Emp;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;

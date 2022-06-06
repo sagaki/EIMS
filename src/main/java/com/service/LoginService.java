@@ -1,6 +1,6 @@
-package com.cjy.service;
+package com.service;
 
-import com.cjy.domain.Login;
+import com.domain.Login;
 
 public interface LoginService {
 

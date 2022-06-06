@@ -1,4 +1,4 @@
-package com.cjy.domain;
+package com.domain;
 
 /**
  * 登录信息持久化类

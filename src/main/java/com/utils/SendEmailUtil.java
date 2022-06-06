@@ -1,4 +1,4 @@
-package com.cjy.utils;
+package com.utils;
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
@@ -12,7 +12,7 @@ public class SendEmailUtil {
 
     public static void send(String to, String title, String content) {
         // 发件人电子邮箱
-        String from = "1625983479@qq.com";
+        String from = "";
         // 指定发送邮件的主机为 smtp.qq.com
         String host = "smtp.qq.com";
         // 获取系统属性
@@ -25,7 +25,7 @@ public class SendEmailUtil {
         Session session = Session.getDefaultInstance(properties, new Authenticator() {
             @Override
             public PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("1625983479@qq.com", "ppdspniaxfjybjdi"); // 发件人邮件用户名、授权码
+                return new PasswordAuthentication("", ""); // 发件人邮件用户名、授权码
             }
         });
 

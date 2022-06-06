@@ -1,8 +1,8 @@
-package com.cjy.controller;
+package com.controller;
 
-import com.cjy.domain.Emp;
-import com.cjy.service.EmpService;
-import com.cjy.utils.SHAUtil;
+import com.domain.Emp;
+import com.service.EmpService;
+import com.utils.SHAUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

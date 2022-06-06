@@ -1,12 +1,12 @@
-package com.cjy.controller;
+package com.controller;
 
-import com.cjy.domain.Emp;
-import com.cjy.domain.Login;
-import com.cjy.service.EmpService;
-import com.cjy.service.LoginService;
-import com.cjy.utils.SHAUtil;
-import com.cjy.utils.SendEmailUtil;
-import com.cjy.utils.TokenUtil;
+import com.domain.Emp;
+import com.domain.Login;
+import com.service.EmpService;
+import com.service.LoginService;
+import com.utils.SHAUtil;
+import com.utils.SendEmailUtil;
+import com.utils.TokenUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

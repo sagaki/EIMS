@@ -1,6 +1,6 @@
-package com.cjy.service;
+package com.service;
 
-import com.cjy.domain.Emp;
+import com.domain.Emp;
 
 import java.util.List;
 
