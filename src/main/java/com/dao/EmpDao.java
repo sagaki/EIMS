@@ -14,34 +14,34 @@ public interface EmpDao {
 
     // 添加员工信息
     @Insert("insert into emp(name,phone,email) values(#{name},#{phone},#{email})")
-    Integer addEmp(Emp emp);
+    public Integer addEmp(Emp emp);
 
     // 分页查询全部员工信息 屏蔽被假删除的数据
     @Select("select * from emp,login where id=eid and activation='是' LIMIT #{page},5")
-    List<Emp> allEmp(Integer page);
+    public List<Emp> allEmp(Integer page);
 
     // 查询总页数
     @Select("select COUNT(*) from emp,login where id=eid and activation='是'")
-    Integer countEmp();
+    public Integer countEmp();
 
     // 返回emp.id
     @Select("select COUNT(*) from emp")
-    Integer count();
+    public Integer count();
 
     // 根据员工编号查询信息
     @Select("select * from emp,login where id=eid and id=#{id} and activation='是'")
-    Emp findEmpById(Integer id);
+    public Emp findEmpById(Integer id);
 
     // 根据员工姓名模糊查询员工信息
     @Select("select * from emp,login where id=eid and name like concat('%',#{value},'%') and activation='是'")
-    List<Emp> findEmpByName(String name);
+    public List<Emp> findEmpByName(String name);
 
     // 根据员工登录用户名查询员工信息
     @Select("select * from emp,login where id=eid and username=#{username}")
-    Emp findEmpByUsername(String username);
+    public Emp findEmpByUsername(String username);
 
     // 更新员工信息
     @Update("update emp set name=#{name},phone=#{phone},email=#{email} where id=#{id}")
-    Integer updateEmp(Emp emp);
+    public Integer updateEmp(Emp emp);
 
 }
